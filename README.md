@@ -1,4 +1,4 @@
-# Dabba Dash Growth Analytics: Retention, Conversion & Experiments (Power BI, BigQuery SQL)
+ # Dabba Dash Growth Analytics: Retention, Conversion & Experiments (Power BI, BigQuery SQL)
 
 > **Dabba Dash's Paid Social ads keep only 24.7% of new Bengaluru customers for a second month, against 61.0% in Hyderabad and 58.0% in Chennai. The city looks average and the channel looks average. Only the two together show the problem.**
 
@@ -32,7 +32,7 @@ Bengaluru is 27.7% of Q2 2026 orders but grew just 14.6% on Q1, against 53.6% in
 Of 463,308 app opens, 14.7% end in an order. The weakest step is Browse to Add to Cart, where only 52.2% move on. The funnel is 60.1% → 52.2% → 72.1% → 65.0% at each step.
 
 **4. One-tap reorder nearly doubled conversion in test.**
-A home-screen reorder button lifted conversion from 9.0% to 16.5% (+83.9%). It is the smallest of the five tests (715 customers), but a two-proportion z-test gives p ≈ 0.003, so it is very unlikely to be chance. Overall conversion has stayed flat at 14.6% to 14.7% since October 2025, so it is unclear whether the feature shipped or held up at scale.
+A home-screen reorder button lifted conversion from 9.0% to 16.5% (+83.9%). It is the smallest of the five tests (715 customers), but a two-proportion z-test gives p ≈ 0.003, so it is very unlikely to be chance. Overall conversion has stayed flat at about 14.5% to 14.7% since October 2025, so it is unclear whether the feature shipped or held up at scale.
 
 **5. Referral is the most reliable channel, and there is a tested way to grow it.**
 Referral has the highest Month+1 retention overall (64.0%) and in five of six cities. Chennai is the exception, where Partnerships and Influencer score higher. A separate test that doubled referral credit lifted Day 30 retention of referred customers from 42.3% to 48.0% (p ≈ 0.01). That test uses a different retention window from the dashboard's Month+1, so the two sets of figures should not be compared directly.
