@@ -32,7 +32,7 @@ Bengaluru is 27.7% of Q2 2026 orders but grew just 14.6% on Q1, against 53.6% in
 Of 463,308 app opens, 14.7% end in an order. The weakest step is Browse to Add to Cart, where only 52.2% move on. The funnel is 60.1% → 52.2% → 72.1% → 65.0% at each step.
 
 **4. One-tap reorder nearly doubled conversion in test.**
-A home-screen reorder button lifted conversion from 9.0% to 16.5% (+83.9%). It is the smallest of the five tests (715 customers), but a two-proportion z-test gives p ≈ 0.003, so it is very unlikely to be chance. Overall conversion has stayed flat at 14.6% to 14.7% since the test ran, so it is unclear whether the feature shipped or held up at scale.
+A home-screen reorder button lifted conversion from 9.0% to 16.5% (+83.9%). It is the smallest of the five tests (715 customers), but a two-proportion z-test gives p ≈ 0.003, so it is very unlikely to be chance. Overall conversion has stayed flat at 14.6% to 14.7% since October 2025, so it is unclear whether the feature shipped or held up at scale.
 
 **5. Referral is the most reliable channel, and there is a tested way to grow it.**
 Referral has the highest Month+1 retention overall (64.0%) and in five of six cities. Chennai is the exception, where Partnerships and Influencer score higher. A separate test that doubled referral credit lifted Day 30 retention of referred customers from 42.3% to 48.0% (p ≈ 0.01). That test uses a different retention window from the dashboard's Month+1, so the two sets of figures should not be compared directly.
@@ -68,7 +68,7 @@ Two tests show no detectable effect: notification timing (+3.0%, p ≈ 0.78) and
 
 ## Data Structure
 
-A star schema with seven dimension tables and five fact tables at different grains, one per kind of analysis the job ad asks for.
+A star schema with seven dimension tables and five fact tables at different grains.
 
 - **Facts:** `fact_orders` (one row per order), `fact_order_items` (one row per item in an order), `fact_funnel_event` (one row per funnel step, per date, city and channel), `fact_customer_monthly_activity` (one row per customer per month they were active), `fact_experiment_results` (one row per customer per experiment).
 - **Dimensions:** `dim_date`, `dim_city`, `dim_channel`, `dim_customer`, `dim_kitchen`, `dim_menu_item`, `dim_experiment`.
