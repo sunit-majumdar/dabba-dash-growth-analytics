@@ -1,12 +1,10 @@
-# Swish Growth Analytics: Retention, Conversion & Experiments (Power BI, BigQuery SQL)
+# Dabba Dash Growth Analytics: Retention, Conversion & Experiments (Power BI, BigQuery SQL)
 
-> **Swish's Paid Social ads keep only 24.7% of new Bengaluru customers for a second month, against 61.0% in Hyderabad and 58.0% in Chennai. The city looks average and the channel looks average. Only the two together show the problem.**
+> **Dabba Dash's Paid Social ads keep only 24.7% of new Bengaluru customers for a second month, against 61.0% in Hyderabad and 58.0% in Chennai. The city looks average and the channel looks average. Only the two together show the problem.**
 
-A five-page Power BI dashboard built on a dataset modeled on Swish, the Bengaluru-based 10-minute food delivery company. It answers the question a Growth/Product Analyst at Swish would be asked: is Swish acquiring and retaining customers efficiently as it expands into new cities? The data was generated in Python, cleaned in BigQuery SQL, and modeled and visualized in Power BI. *(Data covers 1 April 2025 to 15 September 2026.)*
+A five-page Power BI dashboard built on a synthetic dataset for Dabba Dash, a fictional 10-minute food delivery company. It answers the question a Growth/Product Analyst at a quick-commerce company would be asked: is Dabba Dash acquiring and retaining customers efficiently as it expands into new cities? The data was generated in Python, cleaned in BigQuery SQL, and modeled and visualized in Power BI. *(Data covers 1 April 2025 to 15 September 2026.)*
 
 ## Background & Overview
-
-Swish runs its own kitchens, sourcing and delivery, and is opening new cities. Its Growth/Product Analyst job ad asks for funnels and cohorts, retention and conversion analysis, experiment design, and tracking of orders, frequency and AOV, for the Product, Growth, Marketing and Operations teams. I built the project directly from that ad: every metric on the dashboard traces to a line in it.
 
 The dashboard has five pages, each answering one question:
 
@@ -16,11 +14,11 @@ The dashboard has five pages, each answering one question:
 - **City Expansion:** how is each city growing, Q2 against Q1 2026?
 - **Experiments & A/B Tests:** which of five product tests actually moved its metric?
 
-A one-page summary for a hiring manager is in [Swish_ONE_PAGER.md](Swish_ONE_PAGER.md).
+A one-page summary for a hiring manager is in [DabbaDash_ONE_PAGER.md](DabbaDash_ONE_PAGER.md).
 
 ## Executive Summary
 
-Between 1 July and 15 September 2026, Swish delivered 16,860 orders and **₹66.3 lakh** of revenue, up **8.8%** on the equal-length period before. AOV slipped **0.9%** to ₹393, so all of the growth came from order volume, not bigger baskets. Orders depend on customers coming back, so retention was the next place to look. Month+1 retention is **56.8%** for the latest full cohort (August 2026), up 3.5% on July. That average hides one weak spot: **Paid Social in Bengaluru retains 24.7% of customers**, less than half the 52.1% overall rate, and on a large base of 1,079 customers. The sections below trace how that was found.
+Between 1 July and 15 September 2026, Dabba Dash delivered 16,860 orders and **₹66.3 lakh** of revenue, up **8.8%** on the equal-length period before. AOV slipped **0.9%** to ₹393, so all of the growth came from order volume, not bigger baskets. Orders depend on customers coming back, so retention was the next place to look. Month+1 retention is **56.8%** for the latest full cohort (August 2026), up 3.5% on July. That average hides one weak spot: **Paid Social in Bengaluru retains 24.7% of customers**, less than half the 52.1% overall rate, and on a large base of 1,079 customers. The sections below trace how that was found.
 
 ## Insights Deep-Dive
 
@@ -28,7 +26,7 @@ Between 1 July and 15 September 2026, Swish delivered 16,860 orders and **₹66.
 Bengaluru's overall Month+1 retention is 44.7% and Paid Social's overall is 42.5%. Each looks a little weak, but neither looks alarming. Crossing them shows Bengaluru × Paid Social at 24.7%, while the same channel holds 61.0% in Hyderabad and 58.0% in Chennai. Referral keeps 60.3% of customers in Bengaluru, so the city itself is not the cause. It is not a small-sample effect either: Bengaluru's Paid Social cohort (1,079 customers) is larger than Hyderabad, Chennai and Pune combined (882).
 
 **2. Bengaluru is the oldest market, and the slowest growing.**
-Bengaluru is 27.7% of Q2 2026 orders but grew just 14.6% on Q1, against 53.6% in Chennai, Swish's newest city in the data. Growth rate falls in step with city age across all six cities. That fits a saturated market, where the same ads have been shown to the same audience for longest. The data cannot prove that, and the retention trend by cohort (a next move below) would test it.
+Bengaluru is 27.7% of Q2 2026 orders but grew just 13.6% on Q1, against 51.9% in Chennai, Dabba Dash's newest city in the data. Growth rate falls in step with city age across all six cities. That fits a saturated market, where the same ads have been shown to the same audience for longest. The data cannot prove that, and the retention trend by cohort (a next move below) would test it.
 
 **3. The biggest funnel leak is between browsing and adding to cart.**
 Of 463,308 app opens, 14.7% end in an order. The weakest step is Browse to Add to Cart, where only 52.2% move on. The funnel is 60.1% → 52.2% → 72.1% → 65.0% at each step.
@@ -40,7 +38,7 @@ A home-screen reorder button lifted conversion from 9.0% to 16.5% (+83.9%). It i
 Referral has the highest Month+1 retention overall (64.0%) and in five of six cities. Chennai is the exception, where Partnerships and Influencer score higher. A separate test that doubled referral credit lifted Day 30 retention of referred customers from 42.3% to 48.0% (p ≈ 0.01). That test uses a different retention window from the dashboard's Month+1, so the two sets of figures should not be compared directly.
 
 **6. Not every test worked.**
-Two tests show no detectable effect: notification timing (+3.0%, p ≈ 0.78) and the new checkout layout (−8.4%, p ≈ 0.52). The delivery fee waiver moved AOV from ₹265 to ₹271 (+2.3%); I did not test that one for significance, because it needs the spread of order values.
+Two tests show no detectable effect: notification timing (+3.0%, p ≈ 0.77) and the new checkout layout (−8.4%, p ≈ 0.47). The delivery fee waiver moved AOV from ₹265 to ₹271 (+2.3%); I did not test that one for significance, because it needs the spread of order values.
 
 ## Recommendation
 
@@ -61,7 +59,7 @@ Two tests show no detectable effect: notification timing (+3.0%, p ≈ 0.78) and
 
 ## Caveats & Assumptions
 
-- **All data is synthetic.** It is modeled on Swish's publicly known business. No real Swish figures are used or implied.
+- **All data is synthetic.** Dabba Dash is a fictional company and every figure is generated. The data is modeled on the shape of a Bengaluru quick-commerce business. No real company's figures are used, and this project is not affiliated with any company.
 - **No marketing spend data.** The Paid Social finding shows where customers stay, not what they cost.
 - **Partial current quarter.** Order data ends on 15 September 2026, so the city comparison uses Q2 against Q1 2026. The date slicer defaults to 1 July to 15 September 2026 because a full-history selection leaves every comparison blank (no earlier period to compare against).
 - **Significance tests are approximate.** They use the dashboard's rounded rates and were run outside Power BI.
